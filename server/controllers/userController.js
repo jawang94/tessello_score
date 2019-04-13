@@ -29,8 +29,9 @@ module.exports = {
     var salt = bcrypt.genSaltSync(10);
     var hash = bcrypt.hashSync(req.body.password, salt);
     var user = new User({
-      username: req.body.name,
-      password: hash
+      username: req.body.username,
+      password: hash,
+      email: req.body.email
     });
     user
       .save()
@@ -43,7 +44,7 @@ module.exports = {
   },
 
   userLogin: (req, res) => {
-    User.find({ username: req.body.name }, function(err, user) {
+    User.find({ username: req.body.username }, function(err, user) {
       if (err) {
         res.redirect("/");
       } else if (user) {
