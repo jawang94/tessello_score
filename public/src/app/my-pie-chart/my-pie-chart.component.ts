@@ -5,11 +5,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./my-pie-chart.component.css"]
 })
 export class MyPieChartComponent implements OnInit {
-  public pieChartLabels = [
-    "Your Tessello Score",
-    "Remaining Attainable Points"
-  ];
-  public pieChartData = [750, 100];
+  public pieChartLabels = ["Your TesselloScore", "Remaining Attainable Points"];
+  public pieChartData = [453, 347];
   public pieChartType = "pie";
   constructor() {}
   ngOnInit() {}

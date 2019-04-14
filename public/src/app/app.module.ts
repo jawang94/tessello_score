@@ -16,6 +16,7 @@ import { HomeComponent } from "./home/home.component";
 import { MyBarChartComponent } from "./my-bar-chart/my-bar-chart.component";
 import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
 import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
+import { MetricWeightsComponent } from './metric-weights/metric-weights.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
     HomeComponent,
     MyBarChartComponent,
     MyLineChartComponent,
-    MyPieChartComponent
+    MyPieChartComponent,
+    MetricWeightsComponent
   ],
   imports: [
     BrowserModule,

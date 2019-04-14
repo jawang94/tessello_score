@@ -11,13 +11,13 @@ export class MyLineChartComponent implements OnInit {
     responsive: true
   };
   public lineChartLabels = [
-    "2006",
-    "2007",
-    "2008",
-    "2009",
-    "2010",
-    "2011",
-    "2012"
+    "2013",
+    "2014",
+    "2015",
+    "2016",
+    "2017",
+    "2018",
+    "2019"
   ];
   public lineChartType = "line";
   public lineChartLegend = true;
@@ -25,36 +25,51 @@ export class MyLineChartComponent implements OnInit {
     {
       data: [
         {
-          x: 10,
-          y: 20
+          x: 0,
+          y: 1.57
         },
         {
-          x: 15,
-          y: 30
+          x: 10,
+          y: 1.42
         },
         {
           x: 20,
-          y: 40
+          y: 1.33
         },
         {
-          x: 35,
-          y: 50
-        }
-      ],
-      label: "Series A"
-    },
-    {
-      data: [
-        {
-          x: 15,
-          y: 20
+          x: 30,
+          y: 1.38
         },
         {
-          x: 15,
-          y: 35
+          x: 40,
+          y: 1.25
+        },
+        {
+          x: 50,
+          y: 1.17
+        },
+        {
+          x: 60,
+          y: 1.13
+        },
+        {
+          x: 70,
+          y: 1.08
+        },
+        {
+          x: 80,
+          y: 1.05
+        },
+        {
+          x: 90,
+          y: 0.99
+        },
+        {
+          x: 100,
+          y: 0.94
         }
       ],
-      label: "Series B"
+      label: "Social Media Presence"
     }
   ];
   ngOnInit() {}

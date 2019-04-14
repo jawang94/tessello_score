@@ -1,0 +1,11 @@
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    width: 50%;
+    text-align: center;
+    font-family: 'Avenir';
+    font-size: 100;
+    color: #fea1b6
+}
