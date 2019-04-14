@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!------ Bootstrap and JQuery ---------->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <title>Registration</title>
+  </head>
+
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+          <img
+            src="../../assets/images/df8a848470d3efd877a2a42fac39bdb6.png"
+            id="icon"
+            alt="User Icon"
+          />
+        </div>
+
+        <!-- Login Form -->
+        <form id="userForm" (submit)="onSubmit()">
+          <input
+            type="text"
+            id="login"
+            class="fadeIn second"
+            [(ngModel)]="newUser.username"
+            name="newUser.username"
+            placeholder="username"
+          />
+          <input
+            type="password"
+            id="password"
+            class="fadeIn third"
+            [(ngModel)]="newUser.password"
+            name="newUser.password"
+            placeholder="password"
+          />
+          <input
+            type="text"
+            id="email"
+            class="fadeIn third"
+            [(ngModel)]="newUser.email"
+            name="newUser.email"
+            placeholder="email"
+          />
+          <input type="submit" class="fadeIn fourth" value="Register" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
