@@ -49,7 +49,7 @@ export class NavbarComponent implements OnInit {
     logoutObservable.subscribe(data => {
       console.log("You have logged out");
       this.loggedIn();
-      this.router.navigate(["/"]);
+      this.showHome();
     });
   }
 
