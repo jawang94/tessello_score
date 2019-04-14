@@ -9,7 +9,8 @@ body {
 }
 
 img {
-    max-width: 20%;
+    max-width: 25%;
+    padding-bottom: 5%;
 }
 
 a {

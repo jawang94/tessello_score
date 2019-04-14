@@ -2,6 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { ChartsModule } from "ng2-charts";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -11,7 +12,10 @@ import { LoginComponent } from "./login/login.component";
 import { HttpService } from "./services/http.service";
 import { UpdateComponent } from "./update/update.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
+import { MyBarChartComponent } from "./my-bar-chart/my-bar-chart.component";
+import { MyLineChartComponent } from './my-line-chart/my-line-chart.component';
+import { MyPieChartComponent } from './my-pie-chart/my-pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +25,18 @@ import { HomeComponent } from './home/home.component';
     LoginComponent,
     UpdateComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    MyBarChartComponent,
+    MyLineChartComponent,
+    MyPieChartComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ChartsModule
+  ],
   providers: [HttpService],
   bootstrap: [AppComponent]
 })
