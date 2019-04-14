@@ -1,15 +1,16 @@
 const mongoose = require("mongoose");
+require("mongoose-type-email");
 
 const UserSchema = new mongoose.Schema(
   {
     username: {
       type: String,
-      Required: true,
+      required: true,
       minlength: [3, "Username must be longer than 3 characters"],
       maxlength: [16, "Username cannot be more than 16 characters long"]
     },
-    email_address: { type: mongoose.SchemaTypes.Email, required: true },
-    password: { type: String }
+    email: { type: String, required: true },
+    password: { type: String, required: true }
     // first_name: { type: String },
     // last_name: { type: String },
     // dob: { type: Date },

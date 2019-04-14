@@ -2,7 +2,7 @@ var mongoose = require("mongoose");
 var path = require("path");
 var fs = require("fs");
 
-module.exports = mongoose.connect("mongodb://localhost:27017/even_score", {
+module.exports = mongoose.connect("mongodb://localhost:27017/tessello_score", {
   useNewUrlParser: true
 });
 

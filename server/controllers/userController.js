@@ -36,20 +36,19 @@ module.exports = {
     user
       .save()
       .then(item => {
+        console.log("Successful creation");
         res.json({ message: "Success", item });
       })
       .catch(err => {
+        console.log("Failed creation");
         res.json({ message: "Failed!", err });
       });
   },
 
   userLogin: (req, res) => {
-    User.find({ username: req.body.username }, function(err, user) {
-      if (err) {
-        res.redirect("/");
-      } else if (user) {
+    User.find({ username: req.body.username })
+      .then(user => {
         console.log(user);
-        console.log(user[0].password);
         bcrypt
           .compare(req.body.password, user[0].password)
           .then(data => {
@@ -62,10 +61,14 @@ module.exports = {
             }
           })
           .catch(err => {
+            console.log("Authentication failed");
             res.json({ message: "Error", error: err });
           });
-      }
-    });
+      })
+      .catch(err => {
+        console.log("Cannot find user");
+        res.json({ message: "Error", error: err });
+      });
   },
 
   getLogin: (req, res) => {
