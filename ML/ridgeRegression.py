@@ -30,23 +30,23 @@ def arrayGen(targetArr, distArr):
 
 def writeOutput(y, simulatedX):
     simX = simulatedX.tolist()
-    with open('output.csv', 'w+') as fp:
+    with open('database.csv', 'w+') as fp:
         fp.write('Crime,Income-Debt Ratio,Assets & Liquidity,Payment Timing,Spending rel. Income,Establishment,Debt & Obligations,Current Macroeconomic Climate,Social Media Presence,Location,Quality of Associations,Consistency,Gambling,Organization,Abnormal Purchase Hist,Real Credibility\n')
         for i in range(len(simX)):
             for j in range(len(simX[0])):
                 fp.write(str(simX[i][j]) + ',')
-            fp.write(str(y[i]) + ',\n')
+            fp.write(str(y[i]) + '\n')
     np.savetxt("yVals.csv", y, delimiter=",")
-    np.savetxt("database.csv", simulatedX, delimiter=",")
+    np.savetxt("simulatedVals.csv", simulatedX, delimiter=",")
 
 n_samples = 10000
-
 np.random.seed(0)
 y = np.random.rand(n_samples)
 clf = Ridge(alpha=0)
 #diffArray = np.array([0.07,0.11,0.25, 0.5, 0.75, 0.95])
-#diffArray = np.array([0.51,0.12,0.23,0.12,0.36,0.61,0.13,0.69,0.91,0.55,0.65,0.61,0.39,0.81,0.42])
+
 diffArray = np.array([0.45,0.18,0.23,0.15,0.36,0.54,0.17,0.69,0.82,0.55,0.65,0.61,0.39,0.20,0.42])
+#diffArray = np.array([0.45,0.18,0.23,0.15,0.36,0.54,0.17,0.69,0.82,0.55,0.65,0.61,0.39,0.20,0.8])
 simulatedX = arrayGen(y, diffArray)
 print(simulatedX[0])
 clf.fit(simulatedX, y)
