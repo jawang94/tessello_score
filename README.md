@@ -1,4 +1,5 @@
-![ReadMe Image](https://github.com/jawang94/tessello_score/blob/master/readme_images/Screen%20Shot%202019-04-14%20at%205.28.12%20AM.png)
+# DevPost Link:
+![DevPostLink](https://devpost.com/software/tesselloscore)
 
 ![ReadMe Image2](https://github.com/jawang94/tessello_score/blob/master/readme_images/Screen%20Shot%202019-04-14%20at%205.19.58%20AM.png)
 
