@@ -9,8 +9,8 @@ import { RegistrationComponent } from "./registration/registration.component";
 import { ScoreComponent } from "./score/score.component";
 import { LoginComponent } from "./login/login.component";
 import { HttpService } from "./services/http.service";
-import { UpdateComponent } from './update/update.component';
-import { NavbarComponent } from './navbar/navbar.component';
+import { UpdateComponent } from "./update/update.component";
+import { NavbarComponent } from "./navbar/navbar.component";
 
 @NgModule({
   declarations: [

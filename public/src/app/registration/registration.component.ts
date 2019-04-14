@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../services/http.service";
+import { Router, ActivatedRoute } from "@angular/router";
 import * as $ from "jquery";
 
 @Component({
@@ -10,12 +11,13 @@ import * as $ from "jquery";
 export class RegistrationComponent implements OnInit {
   newUser: any;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, private router: Router) {}
 
   public onSubmit() {
     let newUserObservable = this.httpService.createUser(this.newUser);
     newUserObservable.subscribe(data => {
       console.log("New user registered!", data["item"]);
+      this.router.navigate(["/score/"]);
     });
     this.newUser = { username: "", password: "", email: "" };
   }

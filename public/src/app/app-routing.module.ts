@@ -19,13 +19,13 @@ const routes: Routes = [
     component: UpdateComponent
   },
   {
-    path: "score/:id",
+    path: "score",
     component: ScoreComponent
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { onSameUrlNavigation: "reload" })],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
