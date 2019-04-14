@@ -11,6 +11,7 @@ import { LoginComponent } from "./login/login.component";
 import { HttpService } from "./services/http.service";
 import { UpdateComponent } from "./update/update.component";
 import { NavbarComponent } from "./navbar/navbar.component";
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { NavbarComponent } from "./navbar/navbar.component";
     ScoreComponent,
     LoginComponent,
     UpdateComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [HttpService],

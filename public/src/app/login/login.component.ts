@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { HttpService } from "../services/http.service";
-import { Router, ActivatedRoute } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -9,14 +9,20 @@ import { Router, ActivatedRoute } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
   userLogin: any;
+  @Output() loginEmit = new EventEmitter();
 
   constructor(private httpService: HttpService, private router: Router) {}
+
+  callParent() {
+    console.log("fired");
+    this.loginEmit.emit();
+  }
 
   public onSubmit() {
     let userLoginObservable = this.httpService.loginUser(this.userLogin);
     userLoginObservable.subscribe(data => {
       console.log(data, " has logged in.");
-      this.router.navigate(["/score/"]);
+      this.callParent();
     });
     this.userLogin = { username: "", password: "" };
   }

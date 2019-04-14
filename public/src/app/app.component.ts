@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "./services/http.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-root",
@@ -9,19 +10,22 @@ import { HttpService } from "./services/http.service";
 export class AppComponent implements OnInit {
   user: any;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private _httpService: HttpService, private router: Router) {}
 
   public isLoggedIn() {
-    let loginObservable = this.httpService.getLogin();
+    let loginObservable = this._httpService.getLogin();
     loginObservable.subscribe(data => {
       console.log(data, "is logged in");
-      if (data) {
+      if (data === null) {
+        this.router.navigate(["/home"]);
+      } else {
         this.user = data[0];
+        this.router.navigate(["/score"]);
       }
     });
   }
 
   ngOnInit(): void {
-    this.isLoggedIn();
+    // this.isLoggedIn();
   }
 }

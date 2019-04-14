@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { HttpService } from "../services/http.service";
-import { ActivatedRoute } from "@angular/router";
+import { ChartsModule } from "ng2-charts";
 
 @Component({
   selector: "app-score",
@@ -10,10 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 export class ScoreComponent implements OnInit {
   id: any;
 
-  constructor(
-    private httpService: HttpService,
-    private route: ActivatedRoute
-  ) {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit() {
     let userObservable = this.httpService.getLogin();

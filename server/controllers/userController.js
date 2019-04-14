@@ -80,7 +80,7 @@ module.exports = {
           var temp = null;
           res.json(temp);
         } else {
-          res.json(user);
+          res.json(req.session.loginID);
         }
       }
     });
